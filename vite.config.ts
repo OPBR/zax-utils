@@ -2,9 +2,18 @@
  * @Author: zhangy
  * @Date: 2023-07-24 10:34:18
  */
+import path from 'path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: path.resolve(__dirname, './src')
+      }
+    ]
+  },
   build: {
     outDir: 'dist', // 自定义构建输出目录
     target: 'es2020',
